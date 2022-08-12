@@ -7,4 +7,8 @@ public class Setter {
         key.setValue(value).pressEnter();
         return this;
     }
+    public Setter justSet(SelenideElement key,String value){
+        key.setValue(value);
+        return this;
+    }
 }

@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static com.codeborne.selenide.Selenide.open;
+
 
 
 public class ToolsQATest {
@@ -26,7 +26,6 @@ public class ToolsQATest {
     @Test
     void check() throws IOException {
         Inf data = takeData.read();
-
         autopractform
                 .openPage()
                 .fillPageForm(data)

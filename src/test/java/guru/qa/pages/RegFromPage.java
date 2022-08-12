@@ -24,8 +24,8 @@ public class RegFromPage {
             genderInput = $("#genterWrapper"),
             phoneInput = $("#userNumber"),
             addressInput = $("#currentAddress"),
-            stateInput = $("#react-select-3-input"),//$("#state").click();$("#stateCity-wrapper").$(byText("NCR")).click();
-            cityInput = $("#react-select-4-input"),//$("#city").click();$("#stateCity-wrapper").$(byText("Delhi")).click();
+            stateInput = $("#react-select-3-input"),
+            cityInput = $("#react-select-4-input"),
             dateOfBirthIput = $("#dateOfBirthInput"),
             subjInput = $("#subjectsInput"),
             hobbiesInput = $("#hobbiesWrapper"),
@@ -41,18 +41,18 @@ public class RegFromPage {
     }
     public RegFromPage fillPageForm(Inf data){
         setInPage
-                .setAndEnt(firstNameInput,data.fname)
-                .setAndEnt(lastNameInput,data.lname)
-                .setAndEnt(emailInput,data.email);
+                .justSet(firstNameInput,data.fname)
+                .justSet(lastNameInput,data.lname)
+                .justSet(emailInput,data.email);
         this.setGender(data.gender);
-        setInPage.setAndEnt(phoneInput,data.phone);
+        setInPage.justSet(phoneInput,data.phone);
         this
             .setDateOfBirth(data.birth)
             .setSubj(data.subj)
             .setHobbies(data.hobbies)
             .setPhoto(data.pict);
         setInPage
-                .setAndEnt(addressInput,data.address)
+                .justSet(addressInput,data.address)
                 .setAndEnt(stateInput,data.state)
                 .setAndEnt(cityInput,data.city);
         this.clickSubmit();
@@ -110,12 +110,12 @@ public class RegFromPage {
         matchIt
                 .checkRow("Student Name",data.fname+" "+data.lname)
                 .checkRow("Student Email",data.email)
-                .checkRow("Student Gender",data.gender)
-                .checkRow("Student Phone",data.phone)
+                .checkRow("Gender",data.gender)
+                .checkRow("Mobile",data.phone)
                 .checkRow("Date of Birth",newTime)
                 .checkRow("Subjects",strVersOfSubj)
                 .checkRow("Hobbies",strVersOfHobbies)
-                .checkRow("Photo",data.pict)
+                .checkRow("Picture",data.pict)
                 .checkRow("Address",data.address)
                 .checkRow("State and City",data.state+" "+data.city);
         return this;
